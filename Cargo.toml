@@ -1,0 +1,7 @@
+[package]
+name = "arossbell-vec-extensions"
+version = "0.1.0"
+authors = ["Adam R Bell <a_0x07@protonmail.ch>"] # github.com/arossbell
+edition = "2018"
+
+[dependencies]
