@@ -13,13 +13,15 @@
  *
  * Anti-Frivolous Lawsuit Statement:
  * This code is released under the MIT license,
- *  authored by Adam R Bell (github/arossbell)
+ *  authored by Adam R Bell
+ *  (https://github.com/arossbell)
  *  in AD 2020/2021.
  *
  */
 
 use std::vec::Vec;
 
+// For information about each function, see below.
 pub trait ArossbellVecExt<T>
 {
     fn prepend_value(
@@ -36,25 +38,27 @@ pub trait ArossbellVecExt<T>
 
 impl<T: Copy> ArossbellVecExt<T> for Vec<T>
 {
-        fn prepend_value(
-            &self,
-            val: &T,
-        ) -> Vec<T>
-        {
-            let mut tmpvec: Vec<T> = vec![*val];
-            tmpvec.extend((*self).iter());
-            tmpvec
-        }
+    // Puts a single value at the beginning of a Vec.
+    fn prepend_value(
+        &self,
+        val: &T,
+    ) -> Vec<T>
+    {
+        let mut tmpvec: Vec<T> = vec![*val];
+        tmpvec.extend((*self).iter());
+        tmpvec
+    }
 
-        fn postpend_value(
-            &self,
-            val: &T,
-        ) -> Vec<T>
-        {
-            let mut tmpvec: Vec<T> = self.to_vec();
-            tmpvec.extend(vec![*val].iter());
-            tmpvec
-        }
+    // Puts a single value at the ending of a Vec.
+    fn postpend_value(
+        &self,
+        val: &T,
+    ) -> Vec<T>
+    {
+        let mut tmpvec: Vec<T> = self.to_vec();
+        tmpvec.extend(vec![*val].iter());
+        tmpvec
+    }
 
 }
 
